@@ -3,6 +3,7 @@ package ec.com.tio.leo.dev.spt.models;
 import ec.com.tio.leo.dev.spt.exceptions.SBException;
 import lombok.*;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Getter
@@ -10,8 +11,14 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@Entity
+@Table(name = "cuentas")
 public class Cuenta {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String persona;
     private BigDecimal saldo;
 
